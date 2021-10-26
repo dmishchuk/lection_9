@@ -1,0 +1,107 @@
+@import "variables";
+@import "base-styles";
+
+header {
+  background: white;
+  padding: 1rem;
+
+  button {
+    color: white;
+    background: green;
+    padding: .3rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: .3rem;
+    font-size: $font-2;
+  }
+
+  .header-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .profile-info {
+      margin-left: 1rem;
+
+      h1, p {
+        margin: 0;
+      }
+    }
+
+    .socials-container {
+      background: red;
+      height: 40px;
+      width: 300px;
+      &:hover {
+        background: green;
+      }
+    }
+  }
+}
+
+.main-info {
+  margin-top: 1rem;
+
+  .main-info-left {
+    width: 65%;
+    float: left;
+  }
+
+  .main-info-right {
+    width: 32%;
+    margin-left: 3%;
+    float: left;
+  }
+}
+
+.panel {
+  padding: .5rem;
+  background: white;
+  border: 1px solid $border-color;
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 2px 1px 5px $border-color;
+
+  /*svg vs canvas
+  векторная графика -- растровая графика
+  css -- js
+  browser -- видеокарта*/
+
+  :before {
+    display: block;
+    content: ' ';
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../profile.png");
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-size: 100% 100%;
+  }
+}
+
+%alert {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  margin-top: .5rem;
+}
+
+.alert {
+  @extend %alert;
+}
+.alert-success {
+  @extend %alert;
+  background: #3AAA64;
+  color: white;
+}
+.alert-error {
+  @extend %alert;
+  background: #ad2d2d;
+  color: white;
+}
